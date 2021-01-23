@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Begining of the end</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h3>Page ... </h3>
+        <form action="#" method="POST">
+            <label for="mailGetter"></label>
+            <input type="text" name="mailGetter" id="mailGetter" value="" placeholder="zadejte@mail.ted" />
+            <button type="submit" onclick="tlacitko(event)">Odeslat</button>
+        </form>
+        <script>
+            
+            function tlacitko(event)
+            {
+                var x = $("#mailGetter").val();
+                console.log(x);
+                if (/^.+@[^.]+\..{2,4}$/i.test(x) && x.length > 4)
+                {
+                    console.log("fine");
+                }
+                else
+                {
+                    alert("Chyba: ne validni e-mail");
+                    console.log("err");
+                    event.preventDefault();
+                }
+                
+            }
+            
+        </script>
+    </body>
+</html>
