@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Task 2 - 2021.01.26</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="jsHere.js"></script>
+        <style>
+            body
+            {
+                background-color: rgb(0, 101, 101);
+            }
+                        
+            .chyba
+            {
+                border-color: red;
+                border-width: 2px;
+                border-radius: 3px;
+                border-style: ridge;
+                background-color: sandybrown;
+            }
+            
+            .formElem
+            {
+                margin: 32px;
+                text-align: center;
+            }
+            
+            .napoveda
+            {
+                display: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h2>Stranka ... </h2>
+        <form action="#" method="get" id="formular">
+            <fieldset>
+            <legend>Formular</legend>
+            <div class="formElem">
+                <label for="getMail">
+                    <input type="text" name="getMail" id="email" value="" placeholder="zadejte@mail.ted" />
+                </label>
+                <span class="napoveda"> Chyba: ne validni e-mail </span>
+            </div>
+            <div class="formElem">
+                <label for="pohlavi">
+                    <select id="pohlavi" name="pohlavi">
+                        <option value="0">-- zvolte pohlavi -- </option>
+                        <option>Muz</option>
+                        <option>Zena</option>
+                    </select>
+                </label>
+                <span class="napoveda"> Chyba: zvolte pohlavi </span>
+            </div>
+            <div class="formElem">
+                <span id="souhlas">
+                    <label for="souhas">Ano</label>
+                    <input type="radio" name="souhlas" value="1" />
+                    <label for="souhas">Ne</label>
+                    <input type="radio" name="souhlas" value="0" />
+                </span>
+                <span class="napoveda"> Chyba: podtvrdte souhlas se spracováním osobních údajů </span>
+            </div>
+            
+            <div id="chyby">
+                
+            </div>
+            <div class="formElem">
+                <button type="submit">Odeslat</button>
+            </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
