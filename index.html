@@ -37,46 +37,74 @@ and open the template in the editor.
                 display: none;
             }
             
+            #chyby
+            {
+                position: absolute;/*fixed?*/
+                background: white;
+                border: 1px solid black;
+                padding: 12px;
+                display: none;
+                width: 30%;
+                /*left: 40%;
+                top: 50%;*/
+                /*margin: 0 30%;*/
+                z-index: 100;
+            }
+            
+            #cerne_pozadi
+            {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.7);
+                top: 0;
+                left: 0;
+                display: none;
+                z-index: 50;
+            }
         </style>
     </head>
     <body>
         <h2>Stranka ... </h2>
         <form action="#" method="get" id="formular">
             <fieldset>
-            <legend>Formular</legend>
-            <div class="formElem">
-                <label for="getMail">
-                    <input type="text" name="getMail" id="email" value="" placeholder="zadejte@mail.ted" />
-                </label>
-                <span class="napoveda"> Chyba: ne validni e-mail </span>
-            </div>
-            <div class="formElem">
-                <label for="pohlavi">
-                    <select id="pohlavi" name="pohlavi">
-                        <option value="0">-- zvolte pohlavi -- </option>
-                        <option>Muz</option>
-                        <option>Zena</option>
-                    </select>
-                </label>
-                <span class="napoveda"> Chyba: zvolte pohlavi </span>
-            </div>
-            <div class="formElem">
-                <span id="souhlas">
-                    <label for="souhas">Ano</label>
-                    <input type="radio" name="souhlas" value="1" />
-                    <label for="souhas">Ne</label>
-                    <input type="radio" name="souhlas" value="0" />
-                </span>
-                <span class="napoveda"> Chyba: podtvrdte souhlas se spracováním osobních údajů </span>
-            </div>
+                <legend>Formular</legend>
+                <div class="formElem">
+                    <label for="getMail">
+                        <input type="text" name="getMail" id="email" value="" placeholder="zadejte@mail.ted" />
+                    </label>
+                    <span class="napoveda"> Chyba: ne validni e-mail </span>
+                </div>
+                <div class="formElem">
+                    <label for="pohlavi">
+                        <select id="pohlavi" name="pohlavi">
+                            <option value="0">-- zvolte pohlavi -- </option>
+                            <option>Muz</option>
+                            <option>Zena</option>
+                        </select>
+                    </label>
+                    <span class="napoveda"> Chyba: zvolte pohlavi </span>
+                </div>
+                <div class="formElem">
+                    <span id="souhlas">
+                        <label for="souhas">Ano</label>
+                        <input type="radio" name="souhlas" value="1" />
+                        <label for="souhas">Ne</label>
+                        <input type="radio" name="souhlas" value="0" />
+                    </span>
+                    <span class="napoveda"> Chyba: podtvrdte souhlas se spracováním osobních údajů </span>
+                </div>
+
+                <div class="formElem">
+                    <button type="submit">Odeslat</button>
+                </div>
+            </fieldset>
             
             <div id="chyby">
-                
+                <div></div>
+                <button class="zavrit">Zavrit</button>
             </div>
-            <div class="formElem">
-                <button type="submit">Odeslat</button>
-            </div>
-            </fieldset>
+            <div id="cerne_pozadi" class="zavrit"></div>
         </form>
     </body>
 </html>

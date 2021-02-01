@@ -1,3 +1,5 @@
+
+
 $(document).ready
 (
   function()
@@ -16,7 +18,9 @@ function formular()
     
     $('#pohlavi, input[name="souhlas').change(formular.sender.errManagerAuto);
     $('#email').change(function(){formular.mailChecker();});
-    $('#email').on("focus", function(){formular.mailElem.removeClass(formular.errClassName)});
+    $('#email').on("focus", function(){formular.mailElem.removeClass(formular.errClassName);});
+    $('.zavrit').click(function(){$('#cerne_pozadi').removeAttr("style"); $('#chyby').removeAttr("style"); return false;});
+    $(window).resize(formular.sender.displayInfo.winPosChange);
 }
 
 
@@ -123,7 +127,21 @@ formular.mailChecker = function()
 
 formular.sender.displayInfo = function(info)
 {//alert, nebo jinej spusob zobrazit
-    alert(info);
-}
+//    alert(info);
+    let elem_chyby = $('#chyby');
+    formular.sender.displayInfo.winPosChange();
+    elem_chyby.css("display", "block");
+    $('#chyby > div').html(info);
+    $('#cerne_pozadi').css('display', 'block');
+    
+};
 
+formular.sender.displayInfo.winPosChange = function()
+{
+    let elem_chyby = $('#chyby');
+    let sirka_okna = window.innerWidth;
+    let posun_levo = (sirka_okna - (sirka_okna * 0.3))/2 - 2;
+    elem_chyby.css({'left': posun_levo});
+//    console.log(posun_levo);
+};
 
