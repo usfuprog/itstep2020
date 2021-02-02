@@ -12,6 +12,30 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="jsHere.js"></script>
         <style>
+            #animace img
+            {
+                width: 111px;
+            }
+            
+            #animace li
+            {
+                position: absolute;
+            }
+            
+            #animace ul
+            {
+                position: relative;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            #img_center
+            {
+                width: 333px;
+                margin: 0 auto;
+            }
+            
             body
             {
                 background-color: rgb(0, 101, 101);
@@ -106,5 +130,40 @@ and open the template in the editor.
             </div>
             <div id="cerne_pozadi" class="zavrit"></div>
         </form>
+        <div id="animace">
+            <ul>
+                <li id="obr1">
+                    <a href="https://github.com/usfuprog/" target="_blank">
+                        <img src="img01.jpg" alt = "" />
+                    </a>
+                </li>
+                <li id="obr2">
+                    <a href="https://github.com/usfuprog/" target="_blank">
+                        <img src="img02.jpg" alt = "" />
+                    </a>
+                </li>
+                <li id="obr3">
+                    <a href="https://github.com/usfuprog/" target="_blank">
+                        <img src="img03.jpg" alt = "" />
+                    </a>
+                </li>
+                <li id="obr4">
+                    <a href="https://github.com/usfuprog/" target="_blank">
+                        <img src="img04.jpg" alt = "" />
+                    </a>
+                </li>
+                <li id="obr5">
+                    <a href="https://github.com/usfuprog/" target="_blank">
+                        <img src="img05.jpg" alt = "" />
+                    </a>
+                </li>
+                <li id="obr6">
+                    <a href="https://github.com/usfuprog/" target="_blank">
+                        <img src="img06.jpg" alt = "" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="img_center"><img src="lion.jpg" alt="" width="333" /></div>
     </body>
 </html>

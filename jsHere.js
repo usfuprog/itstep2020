@@ -5,6 +5,7 @@ $(document).ready
   function()
   {
         formular();
+        animace();
   }
 );
 
@@ -145,3 +146,37 @@ formular.sender.displayInfo.winPosChange = function()
 //    console.log(posun_levo);
 };
 
+
+function animace()
+{
+    animace.casovac = null;
+    animace.stav = 0;
+    $('#animace li').css({'opacity': 0, 'display': 'none'});
+    
+    $('#animace li').mouseenter(function(){clearTimeout(animace.casovac);});
+    $('#animace li').mouseleave(function(){animace.go();});
+    
+    animace.go();
+}
+
+animace.go = function()
+{
+    if (animace.stav === 0)animace.stav = 1;
+    
+    pohyb();
+    function pohyb()
+    {
+        $('#animace li#obr' + animace.stav).css('display', 'block');
+        $('#animace li#obr' + animace.stav).animate({'opacity': 1}, 1000);
+        let pocet_obrazku = $('#animace li').length;
+//        console.log("___");
+        animace.casovac = setTimeout(function()
+        {
+            $('#animace li#obr' + animace.stav).css('display', 'none');
+            $('#animace li#obr' + animace.stav).animate({'opacity': 0}, 1000);
+            if (animace.stav < pocet_obrazku)animace.stav++; else animace.stav = 1;
+//            console.log(animace.stav);
+            pohyb();
+        }, 2000);
+    }
+};
