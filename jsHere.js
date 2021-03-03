@@ -116,7 +116,7 @@ eShop.odebrat = function()
  * [0 = [1, 2, 3 ...], 1 = [1, 2, 3, ...], 2 = [1, 2, 3, ...], ...]
  * 
  * @param {string} val
- * @param {string} pos
+ * @param {integer} pos
  * @param {boolean} first    if "true", vrati idx prvni shody, jinak posledni.
  * Pri volani bez parametru "pos" i "first", hleda "val" na prvnim prvku 
  * vnitrniho pole i vrati prvni schodu. 
@@ -139,8 +139,7 @@ eShop.get_pos_by_inner_val = function(val, pos, first)
     let i = 0, res = -1;
     for (; i < eShop.obsah_kosiku.length; i ++)
     {
-        //ctrl [i][pos] is string
-        if (eShop.obsah_kosiku[i][pos].indexOf(val) !== -1)
+        if (eShop.obsah_kosiku[i][pos] == val)
         {
 //            console.log(i);
             res = i;
