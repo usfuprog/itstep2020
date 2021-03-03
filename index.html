@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Begining of the end</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>eShop + cookie</title>
+        <style>
+            menu > ul > li > ul
+            {
+                display: none;
+            }
+        </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="jsHere.js"></script>
     </head>
     <body>
-        <h3>Page ... </h3>
-        <form action="#" method="POST">
-            <label for="mailGetter"></label>
-            <input type="text" name="mailGetter" id="mailGetter" value="" placeholder="zadejte@mail.ted" />
-            <button type="submit" onclick="tlacitko(event)">Odeslat</button>
-        </form>
-        <script>
-            
-            function tlacitko(event)
-            {
-                var x = $("#mailGetter").val();
-                console.log(x);
-                if (/^.+@[^.]+\..{2,4}$/i.test(x) && x.length > 4)
-                {
-                    console.log("fine");
-                }
-                else
-                {
-                    alert("Chyba: ne validni e-mail");
-                    console.log("err");
-                    event.preventDefault();
-                }
-                
-            }
-            
-        </script>
+        <menu>
+            <ul>
+                <li><span>Prvni uroven</span>
+                    <ul>
+                        <li><span>Druhou uroven</span></li>
+                    </ul>
+                </li>
+                <li><span>Prvni uroven</span>
+                    <ul>
+                        <li><span>Druhou uroven</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </menu>
+        
+        <table>
+                <tr>
+                        <td class="nazev">Prvni zbozi</td>
+                        <td>Cena: </td>
+                        <td>1 000</td>
+                        <td>Kc</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td><button class="do-kosiku" id-vyrobku="1" cena="1000">Koupit</button></td>
+                </tr>
+                <tr>
+                        <td class="nazev">Druhe zbozi</td>
+                        <td>Cena: </td>
+                        <td>1 500</td>
+                        <td>Kc</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td><button class="do-kosiku" id-vyrobku="2" cena="1500">Koupit</button></td>
+                </tr>
+                <tr>
+                        <td class="nazev">Treti zbozi</td>
+                        <td>Cena: </td>
+                        <td>300</td>
+                        <td>Kc</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td><button class="do-kosiku" id-vyrobku="3" cena="300">Koupit</button></td>
+                </tr>
+        </table>
+        <div id="kosik"></div>
+        <div id="policka">
+            <div><label><input type="checkbox" id="checker" />Zaskrtnout vsechno</label></div>
+            <input type="checkbox" /></br>
+            <input type="checkbox" /></br>
+            <input type="checkbox" /></br>
+            <input type="checkbox" /></br>
+        </div>
     </body>
 </html>
