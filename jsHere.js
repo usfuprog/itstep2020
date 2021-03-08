@@ -1,5 +1,6 @@
 /*
 https://github.com/usfuprog/itstep2020/
+https://github.com/usfuprog/itstep2020/tree/20210303_task_006
 */
 
 
@@ -64,7 +65,7 @@ function eShop()
  */
 eShop.renderKosik = function()
 {//[0] - id, [1] - cena, [2] - mnozstvi, [3] - nazev
-    let obsah_kosiku_html = '', cookie_polozka = '';
+    let obsah_kosiku_html = '', cookie_polozka = '[';
     let celkova_cena = 0, i = 0;
     
     for (; i < eShop.obsah_kosiku.length; i ++)
@@ -73,8 +74,12 @@ eShop.renderKosik = function()
         ', cena: '+eShop.obsah_kosiku[i][1]*eShop.obsah_kosiku[i][2]+ ', Nazev: '+
         eShop.obsah_kosiku[i][3]+', Mnozstvi:'+eShop.obsah_kosiku[i][2]+'<span class="odebrat"> X </span>'+'</p>';
         celkova_cena += eShop.obsah_kosiku[i][1]*eShop.obsah_kosiku[i][2];
-        cookie_polozka += "|" + eShop.obsah_kosiku[i][0]+"/"+eShop.obsah_kosiku[i][2];
+//        cookie_polozka += "|" + eShop.obsah_kosiku[i][0]+"/"+eShop.obsah_kosiku[i][2];
+        cookie_polozka += '{"id":' + eShop.obsah_kosiku[i][0] + ', "ks":' + eShop.obsah_kosiku[i][2]+"}";
+        if (i < eShop.obsah_kosiku.length - 1)cookie_polozka += ', ';
     }
+    cookie_polozka += ']';
+    
     $('#kosik').html(obsah_kosiku_html + '<p>Cena celkem: '+
     celkova_cena+'</p>');
     
@@ -127,7 +132,7 @@ eShop.odebrat = function()
 eShop.get_pos_by_inner_val = function(val, pos, first)
 {
     console.log("~~~~~~~~~~~~~~~~~~~~~", val);
-    if (val*1 != val && !Array.isArray(val))
+    if (val*1 != val || Array.isArray(val))
         return;
     if (!pos || pos < 0)
         pos = 0;
@@ -232,8 +237,9 @@ eShop.ctrlCookie = function(cookName, innerSepar)
         return find;
     })();
     console.log(!!res, "  ", res, "  ", Array.isArray(res));
+    console.log(JSON.parse(res));
     
-    res = res && eShop.ctrlCookie.setKosikByCookie(res);
+    res = res && eShop.ctrlCookie.setKosikByCookie(JSON.parse(res));
     console.log(!!res, "  ", res, "  ", Array.isArray(res));
     
     return !!res;
@@ -249,16 +255,17 @@ eShop.ctrlCookie.setKosikByCookie = function(arr)
     for (let i in arr)
     {
         let iter = arr[i];
-        if (iter[0] && iter[1])
+        if (iter.id && iter.ks)
         {
 //            console.log(iter);
             $("button.do-kosiku").each(function(idx, val, thisJq){
                 thisJq = $(this);
+//                console.log(iter.id);
 //                console.log(idx, val, addTo, thisJq);
-                if (thisJq.attr("id-vyrobku")*1 === iter[0]*1)
+                if (thisJq.attr("id-vyrobku") == iter.id)
                 {
                     console.log("[=]");
-                    addTo.push([iter[0]+"", thisJq.attr('cena')*1, iter[1]*1, thisJq.parent('td').siblings('.nazev').text()]);
+                    addTo.push([iter.id, thisJq.attr('cena')*1, iter.ks, thisJq.parent('td').siblings('.nazev').text()]);
                 }
             });
             
