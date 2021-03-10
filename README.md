@@ -8,6 +8,6 @@
 
 /tree/20210126_task_005 _______ eShop, kosik, replace zbozi function, select count zbozi, total sum
 
-/tree/20210303_task_006 _______ eShop, add info to cookie, render info from cookie on reload, cookie ready send on server
+/tree/20210303_task_006 _______ eShop, add info to cookie, render info from cookie on reload; without server cookie not work
 
 
