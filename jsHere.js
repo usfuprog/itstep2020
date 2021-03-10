@@ -237,7 +237,7 @@ eShop.ctrlCookie = function(cookName, innerSepar)
         return find;
     })();
     console.log(!!res, "  ", res, "  ", Array.isArray(res));
-    console.log(JSON.parse(res));
+//    console.log(JSON.parse(res));
     
     res = res && eShop.ctrlCookie.setKosikByCookie(JSON.parse(res));
     console.log(!!res, "  ", res, "  ", Array.isArray(res));
