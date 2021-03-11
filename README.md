@@ -10,4 +10,5 @@
 
 /tree/20210303_task_006 _______ eShop, add info to cookie, render info from cookie on reload; without server cookie not work
 
+/tree/20210311_task_007 _______ eShop + cookie + html output in popup window, with two buttons. Select some goods and click button "K pokladne"
 
