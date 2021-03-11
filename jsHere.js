@@ -11,6 +11,11 @@ $(document).ready
       document.cookie = "username=John Doe; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
       eShop();
       checkedAll();
+      console.log(window);
+      
+      /*replace*/
+      $("#sendOrder").on("click", eShop.sendOrder);
+//      console.log(Object.keys(window.document), document.location);
 //      menu();
   }
 );
@@ -82,6 +87,8 @@ eShop.renderKosik = function()
     
     $('#kosik').html(obsah_kosiku_html + '<p>Cena celkem: '+
     celkova_cena+'</p>');
+    
+    eShop.showInfo = i ? obsah_kosiku_html + '<p>Cena celkem: '+celkova_cena+'</p>' : "";
     
     document.cookie = 'kosik=' + cookie_polozka;
     console.log(cookie_polozka);
@@ -279,6 +286,14 @@ eShop.ctrlCookie.setKosikByCookie = function(arr)
     return addTo && addTo.length ? true : false;
 };
 
+eShop.sendOrder = function(event, thisJq)
+{
+    thisJq = $(this);
+    thisJq.val("Ajax will be there ... next time ... ");
+    setTimeout(function(){thisJq.val("Odeslat");}, 2000);
+}
+
+
 
 /*
  * ne patri k eShop
@@ -302,5 +317,7 @@ function checkedAll()
         console.log($(this).parents("#policka").children("[type='checkbox']").length, $(this).prop("checked"));
         
         $(this).parents("#policka").children("[type='checkbox']").prop("checked", $(this).prop("checked"));
+        
     });
 }
+

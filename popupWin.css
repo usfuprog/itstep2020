@@ -1,0 +1,28 @@
+
+    #popup_win
+    {
+        position: absolute;/*fixed?*/
+        background: white;
+        border: 1px solid black;
+        padding: 12px;
+        display: none;
+        width: 50%;
+        border-radius: 9px;
+        overflow: hidden;
+        /*left: 30%;
+        top: 50%;*/
+        /*margin: 0 30%;*/
+        z-index: 100;
+    }
+
+    #cerne_pozadi
+    {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 50;
+    }

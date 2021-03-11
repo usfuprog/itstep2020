@@ -7,9 +7,27 @@
             {
                 display: none;
             }
+            
+            #pokladna
+            {
+                padding: 10px;
+                margin: 10px;
+                font-size: 24px;
+            }
+            
+            #sendOrder
+            {
+                background-color: greenyellow;
+                
+                margin-left: 50%;
+            }
+            
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="jsHere.js"></script>
+        <script src="popupWin.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="popupWin.css">
     </head>
     <body>
         <menu>
@@ -50,10 +68,26 @@
                         <td>300</td>
                         <td>Kc</td>
                         <td><input type="number" value="1" min="1"></td>
-                        <td><button class="do-kosiku" id-vyrobku="3" cena="300">Koupit</button></td>
+                        <td><button class="do-kosiku" id-vyrobku="3" cena="300"">Koupit</button></td>
                 </tr>
+<!--
+                <tr>
+                    <td colspan="6">
+                        <div>
+                            <button id="pokladna">
+                                K pokladne + ikon
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+-->
         </table>
         <div id="kosik"></div>
+        <div>
+            <button id="pokladna">
+                K pokladne
+            </button>
+        </div>
         <div id="policka">
             <div><label><input type="checkbox" id="checker" />Zaskrtnout vsechno</label></div>
             <input type="checkbox" /></br>
@@ -61,5 +95,14 @@
             <input type="checkbox" /></br>
             <input type="checkbox" /></br>
         </div>
+        
+        <div id="popup_win">
+            <div></div>
+            <button type="button" class="zavrit">Zavrit</button>
+            <input type="submit" id="sendOrder" />
+        </div>
+        
+        <div id="cerne_pozadi" class="zavrit"></div>
+        
     </body>
 </html>
