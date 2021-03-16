@@ -12,8 +12,6 @@ $(document).ready
       eShop();
       checkedAll();
       console.log(window);
-      
-      /*replace*/
       $("#sendOrder").on("click", eShop.sendOrder);
 //      console.log(Object.keys(window.document), document.location);
 //      menu();
@@ -286,14 +284,13 @@ eShop.ctrlCookie.setKosikByCookie = function(arr)
     return addTo && addTo.length ? true : false;
 };
 
+
 eShop.sendOrder = function(event, thisJq)
 {
     thisJq = $(this);
     thisJq.val("Ajax will be there ... next time ... ");
     setTimeout(function(){thisJq.val("Odeslat");}, 2000);
 }
-
-
 
 /*
  * ne patri k eShop
@@ -318,6 +315,7 @@ function checkedAll()
         
         $(this).parents("#policka").children("[type='checkbox']").prop("checked", $(this).prop("checked"));
         
+        eShop.popupWin("#empty_kosik", ".zavrit", "Kosik je prazdnej", "#cerne_pozadi", "#empty_kosik");
     });
 }
 

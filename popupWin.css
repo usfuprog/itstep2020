@@ -1,14 +1,14 @@
 
-    #popup_win
+    #popup_win, #empty_kosik
     {
         position: absolute;/*fixed?*/
         background: white;
         border: 1px solid black;
         padding: 12px;
         display: none;
-        width: 50%;
+        width: 44%;
         border-radius: 9px;
-        overflow: hidden;
+        padding: 25px;
         /*left: 30%;
         top: 50%;*/
         /*margin: 0 30%;*/

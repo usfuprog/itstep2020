@@ -16,7 +16,7 @@
     $(document).ready(function(){addTo.popupWin();});
     
     
-    addTo.popupWin = function(buttonStart, buttonClose, prefix, darkBack, elem)
+    addTo.popupWin = function(buttonStart, buttonClose, prefix, darkBack, elem, winWidth)
     {
         addTo.popupWin.buttonStart = buttonStart || "#pokladna";
         addTo.popupWin.buttonClose = buttonClose || ".zavrit";
