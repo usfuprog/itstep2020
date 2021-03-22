@@ -28,13 +28,17 @@
             }
             
         </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script -->
+        <script src="jquery-3.4.0.js"></script>
         <script src="jsHere.js"></script>
         <script src="popupWin.js"></script>
         
         <link rel="stylesheet" type="text/css" href="popupWin.css">
     </head>
     <body>
+        <label><input type="radio" value="cs" name="jazyky">Cinstina</label>
+        <label><input type="radio" value="en" name="jazyky" checked>Anglictina</label>
+        
         <menu>
             <ul>
                 <li><span>Prvni uroven</span>
@@ -100,19 +104,33 @@
             <input type="checkbox" /></br>
             <input type="checkbox" /></br>
         </div>
+       
+        <div class="rozbalovaci-blok">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris rhoncus aenean vel elit. Diam sollicitudin tempor id eu nisl nunc. Mauris pharetra et ultrices neque ornare aenean euismod. Semper quis lectus nulla at volutpat diam ut venenatis. Purus sit amet luctus venenatis lectus magna fringilla. Sed viverra ipsum nunc aliquet bibendum enim. Turpis cursus in hac habitasse platea dictumst quisque sagittis purus. Vitae congue eu consequat ac. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Diam volutpat commodo sed egestas. Netus et malesuada fames ac turpis egestas integer eget aliquet. Sodales ut eu sem integer vitae justo eget. Ultricies mi eget mauris pharetra et ultrices. Pretium quam vulputate dignissim suspendisse in est ante. At consectetur lorem donec massa sapien faucibus. In hac habitasse platea dictumst. Amet luctus venenatis lectus magna fringilla. Mauris rhoncus aenean vel elit.
+            </p>
+            <div class="po-kliku">
+                <p>
+                    Nascetur ridiculus mus mauris vitae. Velit laoreet id donec ultrices tincidunt. Mi bibendum neque egestas congue. Quis imperdiet massa tincidunt nunc pulvinar sapien. Tincidunt eget nullam non nisi. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Nam aliquam sem et tortor consequat id porta. Curabitur gravida arcu ac tortor dignissim convallis aenean. Massa ultricies mi quis hendrerit dolor magna eget est. Viverra adipiscing at in tellus. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Nulla facilisi morbi tempus iaculis urna. Etiam sit amet nisl purus in. Ut enim blandit volutpat maecenas. Tellus molestie nunc non blandit massa enim nec dui nunc.
+                </p>
+                <p>
+                    Quis imperdiet massa tincidunt nunc pulvinar sapien. Et malesuada fames ac turpis egestas sed. Aenean vel elit scelerisque mauris pellentesque. Iaculis nunc sed augue lacus. Sed elementum tempus egestas sed sed risus pretium quam vulputate. Purus sit amet luctus venenatis lectus magna fringilla. Non tellus orci ac auctor augue mauris augue. Orci phasellus egestas tellus rutrum tellus pellentesque. Aliquet risus feugiat in ante metus dictum. Consectetur purus ut faucibus pulvinar. Aliquam vestibulum morbi blandit cursus. Mauris in aliquam sem fringilla ut morbi. Non enim praesent elementum facilisis leo vel. Consectetur purus ut faucibus pulvinar elementum integer. Viverra nam libero justo laoreet sit amet cursus sit amet. Id consectetur purus ut faucibus. Nunc sed augue lacus viverra. Diam volutpat commodo sed egestas egestas fringilla. At lectus urna duis convallis convallis tellus.
+                </p>
+            </div>
+        </div>
+        
+        
+        
         
         <div id="popup_win">
-            <div></div>
-            <button type="button" class="zavrit">Zavrit</button>
-            <input type="submit" id="sendOrder" />
+            <div class="">
+                <div></div>
+                <button type="button" class="zavrit">Zavrit</button>
+                <input type="submit" id="sendOrder" />
+            </div>
         </div>
-        
-        <div id="empty_kosik">
-            <div></div>
-            <button type="button" class="zavrit">Zavrit</button>
-        </div>
-        
         <div id="cerne_pozadi" class="zavrit"></div>
+        
         
         <a href="/">Jina stranka: reload coockie test</a>
     </body>

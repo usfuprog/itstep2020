@@ -70,11 +70,26 @@ eShop.renderKosik = function()
 {//[0] - id, [1] - cena, [2] - mnozstvi, [3] - nazev
     let obsah_kosiku_html = '', cookie_polozka = '[';
     let celkova_cena = 0, i = 0;
+    let slovnik = {cena:[' Cena '], nazev:[' Nazev ']}, hodnota = null;
+    $('input[name="jazyky"]').change(function(){
+        hodnota = $(this).val();
+    });
+    
+    switch (hodnota)
+    {
+        case 'cs': 
+            slovnik = {cena:[' Cena '], nazev:[' Nazev '], cena_popis: [' Cena s dph ']};
+            break;
+        case 'en':
+            slovnik = {cena:[' Price '], nazev:[' Name '], cena_popis: [' Price with VAT ']};
+            break;
+    }
+
     
     for (; i < eShop.obsah_kosiku.length; i ++)
     {
         obsah_kosiku_html += '<p id-produktu='+eShop.obsah_kosiku[i][0]+'>ID: '+eShop.obsah_kosiku[i][0]+
-        ', cena: '+eShop.obsah_kosiku[i][1]*eShop.obsah_kosiku[i][2]+ ', Nazev: '+
+        '<span title="' + slovnik.cena_popis + '">' + slovnik.cena+'</span>'+eShop.obsah_kosiku[i][1]*eShop.obsah_kosiku[i][2]+ slovnik.nazev+
         eShop.obsah_kosiku[i][3]+', Mnozstvi:'+eShop.obsah_kosiku[i][2]+'<span class="odebrat"> X </span>'+'</p>';
         celkova_cena += eShop.obsah_kosiku[i][1]*eShop.obsah_kosiku[i][2];
 //        cookie_polozka += "|" + eShop.obsah_kosiku[i][0]+"/"+eShop.obsah_kosiku[i][2];
@@ -290,6 +305,9 @@ eShop.sendOrder = function(event, thisJq)
     thisJq = $(this);
     thisJq.val("Ajax will be there ... next time ... ");
     setTimeout(function(){thisJq.val("Odeslat");}, 2000);
+    
+//    console.log(obj);
+//    alert(obj);
 }
 
 /*
@@ -315,7 +333,7 @@ function checkedAll()
         
         $(this).parents("#policka").children("[type='checkbox']").prop("checked", $(this).prop("checked"));
         
-        eShop.popupWin("#empty_kosik", ".zavrit", "Kosik je prazdnej", "#cerne_pozadi", "#empty_kosik");
+//        eShop.popupWin();
     });
 }
 

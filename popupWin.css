@@ -1,5 +1,5 @@
 
-    #popup_win, #empty_kosik
+    #popup_win>div
     {
         position: absolute;/*fixed?*/
         background: white;
@@ -25,4 +25,19 @@
         left: 0;
         display: none;
         z-index: 50;
+    }
+    
+    #popup_win>.alt_style1
+    {
+        width: 100px;
+    }
+    
+    #popup_win>.alt_style1 [type=submit]
+    {
+        display: none;
+    }
+    
+    #popup_win>.alt_style1 .zavrit
+    {
+        margin: 12px 0 12px 0;
     }
