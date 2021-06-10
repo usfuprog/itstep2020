@@ -1,42 +1,71 @@
+<?php header('Access-Control-Allow-Origin: ' . $_SERVER['DOCUMENT_ROOT']); ?>
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
-    <head>
-        <title>Begining of the end</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <h3>Page ... </h3>
-        <form action="#" method="POST">
-            <label for="mailGetter"></label>
-            <input type="text" name="mailGetter" id="mailGetter" value="" placeholder="zadejte@mail.ted" />
-            <button type="submit" onclick="tlacitko(event)">Odeslat</button>
-        </form>
-        <script>
-            
-            function tlacitko(event)
+  <head>
+    <title>exam</title>
+    <!--meta http-equiv="Content-Type" content="text/html" /-->
+    <meta charset="utf-8" />
+    
+    <script type="text/javascript" src="scriptFolder/script.js"></script>
+    <script type="text/javascript" src="scriptFolder/honeyBeeObjectScript.js"></script>
+    <script type="text/javascript" src="scriptFolder/1p2d.js"></script>
+    
+    <script src="jq/external/jquery/jquery.js"></script>
+    <script src="jq/jquery-ui.js"></script>
+    <link href="jq/jquery-ui.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href="bootstrap.min.css" />
+    
+    <!-- https://github.com/microsoft/TypeScript/wiki/JavaScript-Language-Service-in-Visual-Studio -->
+    <link rel='stylesheet' type='text/css' href="indexStyle.css" />
+    <!-- https://github.com/usfuprog?tab=repositories -->
+    <!-- 
+https://lesscss.org/ 
+https://www.w3schools.com/bootstrap4/default.asp
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+    -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+     <script>
+         $(
+	function () {
+             $('.superButton').on("click", click_superButton);
+             $("#anchorsToNews a").on("click", function(event){event.preventDefault(); defaultNoneDone();});
+             $(".mainMenu span").on("click", defaultNoneDone);
+             $("#menuDiv span").on("click", changeStyle);
+         }
+                 );
+
+    </script>
+    
+    <style>
+            [class *= "col"]
             {
-                var x = $("#mailGetter").val();
-                console.log(x);
-                if (/^.+@[^.]+\..{2,4}$/i.test(x) && x.length > 4)
-                {
-                    console.log("fine");
-                }
-                else
-                {
-                    alert("Chyba: ne validni e-mail");
-                    console.log("err");
-                    event.preventDefault();
-                }
-                
+/*                border: 2px dotted green;*/
             }
-            
-        </script>
-    </body>
+
+            [class *= "row"]
+            {
+/*                border: 2px dotted yellow;*/
+            }
+    </style>
+    
+  </head>
+
+<body>
+    <a href="https://weblims.spadia.cz/webpacient/Result/Info/BtDGdQDjeYgf" alt="vysledek">
+        Tady je vysledek.
+    </a>
+    <div>
+        <b>Password</b><!-- label for ?-->
+        <span>Pq96SnYa</span>
+    </div>
+</body>
+
 </html>
